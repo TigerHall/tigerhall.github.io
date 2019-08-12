@@ -4,41 +4,18 @@
 		<meta charset="utf-8">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<title>四方单锥 | 晶体模型</title>
-		<link type="text/css" href="../../css/pre.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/pre.css" />
 		<script src="Build/UnityLoader.js"></script>
 		<script>
 			UnityLoader.instantiate("unityContainer", "Build/16.json");
 		</script>
 	</head>
 	<body>
-		<div id="unityContainer" class="mx" style="width:37.5rem;height: 37.5rem ;"></div>
-		<p id="word" class="jz" style="color: #0F75D9;font-size: x-small;text-indent: 60px;">模型加载中，预计耗时<span id="numDiv">10</span>秒……</p>
-		<script type="text/javascript">
-			var system = {
-				win: false,
-				mac: false,
-				xll: false
-			};
-			//检测平台
-			var p = navigator.platform;
-			system.win = p.indexOf("Win") == 0;
-			system.mac = p.indexOf("Mac") == 0;
-			system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
-			var num = 10
-			if (system.win || system.mac || system.xll) { //转向后台登陆页面
-				num = 10;
-			} else {
-				num = 20; //手机
-			};
-			var interval = setInterval(function() {
-				if (num == 0) {
-					clearInterval(interval)
-					setTimeout(function() {
-						document.getElementById("word").style.display = "none";
-					}, 500);
-				}
-				numDiv.innerHTML = num--
-			}, 1000)
-		</script>
+		<div class="mxd">
+			<div id="unityContainer" class="mx"></div>
+		</div>
+		<footer><a href="../../index.html">
+				<p class="mxa">四方单锥&amp;首页</p>
+			</a></footer>
 	</body>
 </html>
