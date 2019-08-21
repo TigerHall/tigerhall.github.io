@@ -37,7 +37,7 @@ h4 {
 
 #side {
 	width: 96%;
-	max-height: 45%;
+	min-height: 45%;
 	text-align: left;
 	color: #c8c8c8;
 	padding: 2%;
@@ -45,7 +45,7 @@ h4 {
 }
 
 #main {
-	max-height: 45%;
+	min-height: 45%;
 	width: 90%;
 	color: #c8c8c8;
 	text-align: center;
