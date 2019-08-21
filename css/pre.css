@@ -1,28 +1,76 @@
 /* 渲染窗口 */
 a {
 	text-decoration: none;
+	color: #bfbfbf;
 }
 
 a:hover {
 	text-decoration: underline;
 }
 
-.mxa {
-	text-align: center;
+body {
+	background: #0d0d0d;
 }
-.mxd{
-	padding-left: 10%;
-	padding-right: 10%;
-	padding-top: 2%;
-	text-align: center;
+
+h2{
+	color: #f5c700;
+}
+h4{
+	color: #ffffff;
+}
+.wrap {
+	margin: 0 auto;
+	width: 98%;
+}
+
+#content {
+	margin-top: 50px;
+	height: 600px;
+}
+
+#side {
+	color: #bfbfbf;
+	float: left;
+	width: 42%;
+	text-align: left;
+	line-height: inherit;
+	padding: 2px;
+}
+
+#main {
+	float: right;
+	height: 100%;
+	width: 55%;
+	text-align: right;
 }
 
 .mx {
 	width: 100%;
-	max-height: 600px;
+	height: 100%;
 }
-.jz{
-	color: #0F75D9;
-	font-size: x-small;
+.lj{
+	margin: 0 auto;
 	text-align: center;
+}
+.bt{
+	background-color: #9e7c25;
+	margin: 5px;
+	border-radius:4px;
+}
+@media (max-width:750px) {
+	#content {
+		margin: 0 auto;
+	}
+
+	#side {
+		width: 100%;
+		text-align: left;
+	}
+
+	#main {
+		height: 40%;
+		width: 100%;
+		background: #c8c8c8;
+		text-align: center;
+	}
 }
