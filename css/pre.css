@@ -17,9 +17,11 @@ body {
 h1 {
 	color: #f5c700;
 }
-h2{
+
+h2 {
 	color: #f5c700;
 }
+
 h4 {
 	color: #ffffff;
 }
@@ -66,4 +68,8 @@ h4 {
 	background-color: #9e7c25;
 	margin: 0.5rem 0.5rem 0.5rem 0.5rem;
 	border-radius: 0.5rem;
+}
+
+#jx {
+	text-align: left;
 }
