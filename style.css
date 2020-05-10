@@ -7,7 +7,7 @@
 
 .text-popup {
     animation: textPopup 1s;
-    color: red;
+    color: rgb(202, 17, 17);
     user-select: none;
     white-space: nowrap;
     position: absolute;
