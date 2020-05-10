@@ -71,6 +71,26 @@
 	}
 }
 
+.text-popup {
+    animation: textPopup 1s;
+    color: rgba(218, 41, 10, 0.651);
+    user-select: none;
+    white-space: nowrap;
+    position: absolute;
+    z-index: 99;
+}
+@keyframes textPopup {
+    0%, 100% {
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-50px);    
+    }
+}
+
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,

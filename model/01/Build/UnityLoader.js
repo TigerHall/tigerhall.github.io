@@ -2356,11 +2356,7 @@ var UnityLoader = UnityLoader || {
 		}
 	}(),
 	compatibilityCheck: function(e, t, r) {
-		UnityLoader.SystemInfo.hasWebGL ? UnityLoader.SystemInfo.mobile ? e.popup(
-			"Please note that Unity WebGL is not currently supported on mobiles. Press OK if you wish to continue anyway.", [{
-				text: "继续",
-				callback: t
-			}]) : ["Edge", "Firefox", "Chrome", "Safari"].indexOf(UnityLoader.SystemInfo.browser) == -1 ? e.popup(
+		UnityLoader.SystemInfo.hasWebGL ? ["Edge", "Firefox", "Chrome", "Safari"].indexOf(UnityLoader.SystemInfo.browser) == -1 ? e.popup(
 			"Please note that your browser is not currently supported for this Unity WebGL content. Press OK if you wish to continue anyway.",
 			[{
 				text: "继续",
