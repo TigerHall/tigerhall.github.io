@@ -90,7 +90,7 @@ input, textarea {
 	padding-top:20px;
 	text-align:center;
 	background-color:#eaeaea;
-	box-size:border-box;
+	box-sizing:border-box;
 }
 .site-footer {
 	position:absolute;
@@ -502,7 +502,7 @@ svg {
  display:block;
  float:left;
  background-color:#eaeaea;
- box-size:border-box;
+ box-sizing:border-box;
  padding-top:0px;
  min-height:65px;
 }
