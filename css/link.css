@@ -1,212 +1,138 @@
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-	display: block;
-}
-
 body {
-	line-height: 1;
+    margin: 0;
 }
 
-ol,
-ul {
-	list-style: none;
-}
-
-h1,
-h2 {
-	text-align:center;
-	padding: 16px;
-	margin: 4px;
-}
-
-/* a标签优化 */
-
+/*去掉a标签的下划线*/
 a {
-	font-size: 16px
+    text-decoration: none;
+    padding: 3px;
+    /* display: block; */
+    color: rgb(112, 112, 112);
+
 }
 
-a:link {
-	color: blue;
-	text-decoration: none;
+a:hover:not(.active) {
+    background-color: #555;
+    color: white;
 }
 
-a:active {
-	color: red;
+/* 主要布局 */
+
+/* 左侧 */
+.left {
+
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    min-width: 160px;
+    float: left;
 }
 
-a:visited {
-	color: purple;
-	text-decoration: none;
+.tag {
+    vertical-align: middle;
+    text-align: center;
+    padding: 6px;
+    padding-bottom: 8px;
 }
 
-a:hover {
-	color: red;
-	text-decoration: underline;
+span {
+    font-family: verdana;
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+.tagpic {
+    width: 30px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 160px;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+
+}
+
+li a:hover:not(.active) {
+    background-color: #555;
+    color: white;
 }
 
 
 
-/* 下拉按钮样式 */
-.dropbtn {
-	background-color: #5c65e6;
-	color: white;
-	width: 300px;
-	padding: 16px;
-	font-size: 16px;
-	border: none;
-	cursor: pointer;
+
+
+/* 右侧 */
+.right {
+    float: left;
+    margin-left: 160px;
+    padding: 6px;
+    /* display: flex; */
 }
 
-/* 容器 <div> - 需要定位下拉内容 */
-.dropdown {
-	position: relative;
-	display: inline-block;
-	width: 300px;
-	margin: 1ex;
+.links {
+    text-align: center;
+    border: 2px solid #96c2f1;
+    background: #f1f1f1;
+    border-radius: 3px;
+    padding: 3px;
+    /* display: flex */
 }
 
-/* 下拉内容 (默认隐藏) */
-.dropdown-content {
-	display: none;
-	position: absolute;
-	background-color: #f9f9f9;
-	width: 300px;
-	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-	z-index: 999;
+.links a {
+    text-decoration: none;
+    /* display: block; */
 }
 
-/* 下拉菜单的链接 */
-.dropdown-content a {
-	color: black;
-	padding: 3px;
-	text-decoration: none;
-	display: block;
+@media screen and (max-width:550px) {
+    .links a {
+        text-decoration: none;
+        display: block;
+    }
 }
 
-/* 鼠标移上去后修改下拉菜单链接颜色 */
-.dropdown-content a:hover {
-	background-color: #f1f1f1
+
+/* 已访问的链接 */
+.links a:visited {
+    color: #00FF00;
 }
 
-/* 在鼠标移上去后显示下拉菜单 */
-.dropdown:hover .dropdown-content {
-	display: block;
-}
 
-/* 当下拉内容显示后修改下拉按钮的背景颜色 */
-.dropdown:hover .dropbtn {
-	background-color: #3e8e41;
-}
-
-.link{
-	display: block;
+.footer {
+    background-color: black;
+    color: white;
+    clear: both;
+    text-align: center;
+    padding: 5px;
 }
 
 /* footer */
 .site-footer {
-	/* display: block; */
-	margin-top: 12px;
-	margin-bottom:2px;
-	font-size:12px;
-	padding:20px;
+    background-color: #f1f1f1;
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 2px;
+    font-size: 12px;
+    padding: 20px;
 }
+
 .site-footer p {
-	text-align:center;
-	margin: 5px 0 0 0;
+    text-align: center;
+    margin: 5px 0 0 0;
 }
