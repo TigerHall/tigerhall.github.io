@@ -6,7 +6,6 @@ body {
 a {
     text-decoration: none;
     padding: 3px;
-    /* display: block; */
     color: rgb(112, 112, 112);
 
 }
@@ -20,32 +19,14 @@ a:hover:not(.active) {
 
 /* 左侧 */
 .left {
-
+    display: inline-flex;
     background-color: #f1f1f1;
     position: fixed;
     height: 100%;
-    min-width: 160px;
+    width: 160px;
     float: left;
 }
 
-.tag {
-    vertical-align: middle;
-    text-align: center;
-    padding: 6px;
-    padding-bottom: 8px;
-}
-
-span {
-    font-family: verdana;
-    font-size: 20px;
-    vertical-align: middle;
-}
-
-.tagpic {
-    width: 30px;
-    display: inline-block;
-    vertical-align: middle;
-}
 
 ul {
     list-style-type: none;
@@ -76,14 +57,38 @@ li a:hover:not(.active) {
 
 
 
-
-
 /* 右侧 */
 .right {
+    display: inline-flex;
     float: left;
     margin-left: 160px;
     padding: 6px;
-    /* display: flex; */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.bo {
+    padding: 2px;
+}
+
+.tag {
+    vertical-align: middle;
+    text-align: center;
+    padding: 6px;
+    padding-bottom: 8px;
+}
+
+span {
+    font-family: verdana;
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+.tagpic {
+    width: 30px;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .links {
@@ -92,12 +97,44 @@ li a:hover:not(.active) {
     background: #f1f1f1;
     border-radius: 3px;
     padding: 3px;
-    /* display: flex */
+    margin: 6px;
+    width: 360px;
+    max-height: 500px;
+    overflow: auto;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media screen and (max-width:550px) {
+    .links {
+        text-align: center;
+        border: 2px solid #96c2f1;
+        background: #f1f1f1;
+        border-radius: 3px;
+        padding: 3px;
+        margin: 6px;
+        width: auto;
+        max-height: none;
+    }
+}
+
+.links::-webkit-scrollbar-track {
+    border-radius: 5%;
+    background-color: #f1f1f1;
+}
+
+.links::-webkit-scrollbar {
+    width: 5px;
+}
+
+.links::-webkit-scrollbar-thumb {
+    background-color: rgb(0, 0, 0);
+    border-radius: 4px;
 }
 
 .links a {
     text-decoration: none;
-    /* display: block; */
+    display: block;
 }
 
 @media screen and (max-width:550px) {
@@ -111,28 +148,4 @@ li a:hover:not(.active) {
 /* 已访问的链接 */
 .links a:visited {
     color: #00FF00;
-}
-
-
-.footer {
-    background-color: black;
-    color: white;
-    clear: both;
-    text-align: center;
-    padding: 5px;
-}
-
-/* footer */
-.site-footer {
-    background-color: #f1f1f1;
-    display: block;
-    margin-top: 12px;
-    margin-bottom: 2px;
-    font-size: 12px;
-    padding: 20px;
-}
-
-.site-footer p {
-    text-align: center;
-    margin: 5px 0 0 0;
 }
