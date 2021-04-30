@@ -1,5 +1,9 @@
 {
     "carbon.fontFamily": "Fira Code",
     "editor.fontFamily": "Fira Code",
-    "editor.fontLigatures": true
+    "editor.fontLigatures": true,
+    "cSpell.words": [
+        "Oskar",
+        "rcbdyctl"
+    ]
 }
