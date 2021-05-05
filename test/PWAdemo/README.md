@@ -1,21 +1,28 @@
-# PWAdemo
 
-# Service Worker
-* 能够代理请求
-* 能够操作浏览器缓存，通过将缓存的内容直接返回，即使离线的情况也能让页面瞬间打开。
-* 可以预存储关键文件
-* 可以淘汰过期的文件进行版本控制等等。
+Minimal PWA
+----
 
-# ngrok
-将内网站点穿透到外网，提供https协议，方便调试
- 
+> Very simple code to demonstrate Progressive Web Apps.
 
-# offline.js
-很方便的监听PWA是在线状态还是离线状态，以便做对应的处理
+### Usage
 
-# offline-plugin
-* 工程化的PWA工具插件
-* 配合webpack，相当强悍，谁用谁知道~
+This demo app runs on `localhost`.
 
-# manifest
-配置manifest.json文件，将页面像原生app一样添加到桌面
+```bash
+npm install http-server -g
+http-server -c-1 # with cache disabled
+```
+
+Then open <http://localhost:8080> with Chrome.
+
+Change `cacheStorageKey` in `sw.js` to update app version.
+
+### Trouble shooting
+
+* Why `-c-1` to disable cache?
+
+`sw.js` can be cached by HTTP Caches, then in debugging we could get unexpected behaviors. Disable the cache to simplify the problem.
+
+### License
+
+MIT

@@ -1,5 +1,5 @@
 {
-  "name": "PWA测试",
+  "name": "Minimal PWA",
   "short_name": "PWA Demo",
   "display": "standalone",
   "start_url": "/",

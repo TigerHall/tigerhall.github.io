@@ -10,20 +10,20 @@ var cacheList = [
   "pwa-fonts.png"
 ]
 
-self.addEventListener('install', function (e) {
+self.addEventListener('install', function(e) {
   console.log('Cache event!')
   e.waitUntil(
-    caches.open(cacheStorageKey).then(function (cache) {
+    caches.open(cacheStorageKey).then(function(cache) {
       console.log('Adding to Cache:', cacheList)
       return cache.addAll(cacheList)
-    }).then(function () {
+    }).then(function() {
       console.log('Skip waiting!')
       return self.skipWaiting()
     })
   )
 })
 
-self.addEventListener('activate', function (e) {
+self.addEventListener('activate', function(e) {
   console.log('Activate event')
   e.waitUntil(
     Promise.all(
@@ -41,10 +41,10 @@ self.addEventListener('activate', function (e) {
   )
 })
 
-self.addEventListener('fetch', function (e) {
+self.addEventListener('fetch', function(e) {
   // console.log('Fetch event:', e.request.url)
   e.respondWith(
-    caches.match(e.request).then(function (response) {
+    caches.match(e.request).then(function(response) {
       if (response != null) {
         console.log('Using cache for:', e.request.url)
         return response
