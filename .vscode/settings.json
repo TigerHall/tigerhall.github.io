@@ -6,5 +6,6 @@
         "Oskar",
         "dizhischool",
         "rcbdyctl"
-    ]
+    ],
+    "git.ignoreLimitWarning": true
 }
