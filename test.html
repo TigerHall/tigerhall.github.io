@@ -1,0 +1,649 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <title>晶体矿物 &amp; 模型展示</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="keywords"
+      content="地质,海洋科学网站导航,地质知识分享,地质校园,dizhischool.cn"
+    />
+    <meta name="description" content="学习地质知识的好地方" />
+
+    <!-- / FB Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://dizhischool.cn/" />
+    <meta
+      property="og:title"
+      content="地质校园，交流地质知识。dizhischool.cn"
+    />
+    <meta
+      property="og:description"
+      content="互相学习，多多交流，养成学习好习惯,dizhischool.cn"
+    />
+    <meta
+      property="og:image"
+      content="https://tigerhall.github.io/images/fulls/03.jpg"
+    />
+    <meta property="og:site_name" content="地质校园-欢迎学习。dizhischool.cn" />
+    <!-- / Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="地质校园-欢迎学习。dizhischool.cn" />
+    <meta
+      name="twitter:description"
+      content="互相学习，多多交流，养成学习好习惯,dizhischool.cn"
+    />
+    <meta
+      name="twitter:image"
+      content="https://tigerhall.github.io/images/fulls/03.jpg"
+    />
+
+    <!-- this styles only adds some repairs on devices  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="pic/tabicon.ico" rel="icon" type="image/x-ico" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <script src="js/爱心点击特效.js" type="text/javascript"></script>
+    <script src="js/社会主义词语特效.js" type="text/javascript"></script>
+    <style>
+      /* 全局样式重置 */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #f8f9fa;
+        font-family: "Microsoft Yahei", sans-serif;
+      }
+
+      /* 网格布局 */
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 20px;
+        padding: 24px;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      /* 卡片核心样式 */
+      .card {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1/1; /* 固定正方形 */
+        border-radius: 12px;
+        overflow: hidden;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        background-color: #fff;
+      }
+
+      /* 图片容器 - 保证正方形且图片自适应 */
+      .card .img-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #f5f5f5;
+      }
+
+      .card img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* 保持长宽比，完整显示图片 */
+        transition:
+          opacity 0.3s ease,
+          transform 0.3s ease;
+        opacity: 0.9;
+      }
+
+      /* 悬浮文本层 - 增强文字醒目度 */
+      .card .caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 16px 20px;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+        color: #fff;
+        transition: all 0.3s ease;
+        transform: translateY(10%);
+        opacity: 0.8;
+      }
+
+      /* 标题样式 - 增强醒目度 */
+      .card .caption h3 {
+        font-size: 16px;
+        margin: 0 0 6px 0;
+        font-weight: 600;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      /* 晶系信息样式 - 增强醒目度 */
+      .card .caption span {
+        font-size: 14px;
+        opacity: 1;
+        font-weight: 400;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: block;
+      }
+
+      /* 鼠标hover效果 */
+      .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+      }
+
+      .card:hover img {
+        opacity: 1;
+        transform: scale(1.02);
+      }
+
+      .card:hover .caption {
+        transform: translateY(0);
+        opacity: 1;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+      }
+
+      /* 响应式适配 */
+      @media (max-width: 768px) {
+        .grid {
+          grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+          gap: 16px;
+          padding: 16px;
+        }
+
+        .card .caption {
+          padding: 12px 16px;
+        }
+
+        .card .caption h3 {
+          font-size: 15px;
+        }
+
+        .card .caption span {
+          font-size: 13px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid" id="grid"></div>
+
+    <script>
+      // 完整数据（保留所有原信息）
+      const data = [
+        // 等轴晶系
+        {
+          t: "八面体（8）",
+          s: "等轴晶系",
+          u: "images/tp/八面体.jpg",
+          l: "model/38/index.html",
+        },
+        {
+          t: "立方体（6）",
+          s: "等轴晶系",
+          u: "images/tp/立方体.jpg",
+          l: "model/43/index.html",
+        },
+        {
+          t: "三角三八面体（24）",
+          s: "等轴晶系",
+          u: "images/tp/三角三八面体.jpg",
+          l: "model/39/index.html",
+        },
+        {
+          t: "四角三八面体（24）",
+          s: "等轴晶系",
+          u: "images/tp/四角三八面体.jpg",
+          l: "model/40/index.html",
+        },
+        {
+          t: "五角三八面体（24）",
+          s: "等轴晶系",
+          u: "images/tp/五角三八面体.jpg",
+          l: "model/41/index.html",
+        },
+        {
+          t: "六八面体（48）",
+          s: "等轴晶系",
+          u: "images/tp/六八面体.jpg",
+          l: "model/42/index.html",
+        },
+        {
+          t: "三角三四面体（12）",
+          s: "等轴晶系",
+          u: "images/tp/三角三四面体.jpg",
+          l: "model/34/index.html",
+        },
+        {
+          t: "四角三四面体（12）",
+          s: "等轴晶系",
+          u: "images/tp/四角三四面体.jpg",
+          l: "model/35/index.html",
+        },
+        {
+          t: "五角三四面体（12）",
+          s: "等轴晶系",
+          u: "images/tp/五角三四面体.jpg",
+          l: "model/36/index.html",
+        },
+        {
+          t: "六四面体（24）",
+          s: "等轴晶系",
+          u: "images/tp/六四面体.jpg",
+          l: "model/37/index.html",
+        },
+        {
+          t: "四面体（4）",
+          s: "等轴晶系",
+          u: "images/tp/四面体.jpg",
+          l: "model/33/index.html",
+        },
+        {
+          t: "四六面体（24）",
+          s: "等轴晶系",
+          u: "images/tp/四六面体.jpg",
+          l: "model/44/index.html",
+        },
+        {
+          t: "菱形十二面体（12）",
+          s: "等轴晶系",
+          u: "images/tp/菱形十二面体.jpg",
+          l: "model/45/index.html",
+        },
+        {
+          t: "五角十二面体（12）",
+          s: "等轴晶系",
+          u: "images/tp/五角十二面体.jpg",
+          l: "model/46/index.html",
+        },
+        {
+          t: "偏方复十二面体（24）",
+          s: "等轴晶系",
+          u: "images/tp/偏方复十二面体.jpg",
+          l: "model/47/index.html",
+        },
+
+        // 三方晶系
+        {
+          t: "三方偏方面体（6）",
+          s: "三方晶系",
+          u: "images/tp/三方偏方面体.jpg",
+          l: "model/30/index.html",
+        },
+        {
+          t: "复三方偏三角面体（12）",
+          s: "三方晶系",
+          u: "images/tp/复三方偏三角面体.jpg",
+          l: "model/29/index.html",
+        },
+        {
+          t: "三方柱（3）",
+          s: "三方晶系、六方晶系",
+          u: "images/tp/三方柱.jpg",
+          l: "model/08/index.html",
+        },
+        {
+          t: "复三方柱（6）",
+          s: "三方晶系、六方晶系",
+          u: "images/tp/复三方柱.jpg",
+          l: "model/09/index.html",
+        },
+        {
+          t: "三方单锥（3）",
+          s: "三方晶系",
+          u: "images/tp/三方单锥.jpg",
+          l: "model/14/index.html",
+        },
+        {
+          t: "复三方单锥（6）",
+          s: "三方晶系",
+          u: "images/tp/复三方单锥.jpg",
+          l: "model/15/index.html",
+        },
+        {
+          t: "三方双锥（6）",
+          s: "三方晶系、六方晶系",
+          u: "images/tp/三方双锥.jpg",
+          l: "model/20/index.html",
+        },
+        {
+          t: "菱面体（6）",
+          s: "三方晶系",
+          u: "images/tp/菱面体.jpg",
+          l: "model/27/index.html",
+        },
+
+        // 四方晶系
+        {
+          t: "四方偏方面体（8）",
+          s: "四方晶系",
+          u: "images/tp/四方偏方面体.jpg",
+          l: "model/31/index.html",
+        },
+        {
+          t: "复四方偏三角面体（8）",
+          s: "四方晶系",
+          u: "images/tp/复四方偏三角面体.jpg",
+          l: "model/28/index.html",
+        },
+        {
+          t: "四方柱（4）",
+          s: "四方晶系",
+          u: "images/tp/四方柱.jpg",
+          l: "model/10/index.html",
+        },
+        {
+          t: "复四方柱（8）",
+          s: "四方晶系",
+          u: "images/tp/复四方柱.jpg",
+          l: "model/11/index.html",
+        },
+        {
+          t: "四方单锥（4）",
+          s: "四方晶系",
+          u: "images/tp/四方单锥.jpg",
+          l: "model/16/index.html",
+        },
+        {
+          t: "复四方单锥（8）",
+          s: "四方晶系：4mm",
+          u: "images/tp/复四方单锥.jpg",
+          l: "model/17/index.html",
+        },
+        {
+          t: "四方双锥（8）",
+          s: "四方晶系：42、4/m、4/mmm、-42m",
+          u: "images/tp/四方双锥.jpg",
+          l: "model/22/index.html",
+        },
+        {
+          t: "复四方双锥（16）",
+          s: "四方晶系",
+          u: "images/tp/复四方双锥.jpg",
+          l: "model/23/index.html",
+        },
+        {
+          t: "四方四面体（4）",
+          s: "四方晶系",
+          u: "images/tp/四方四面体.jpg",
+          l: "model/26/index.html",
+        },
+
+        // 六方晶系
+        {
+          t: "六方偏方面体（12）",
+          s: "六方晶系",
+          u: "images/tp/六方偏方面体.jpg",
+          l: "model/32/index.html",
+        },
+        {
+          t: "六方柱（6）",
+          s: "六方晶系、三方晶系",
+          u: "images/tp/六方柱.jpg",
+          l: "model/12/index.html",
+        },
+        {
+          t: "复六方柱（12）",
+          s: "六方晶系、三方晶系",
+          u: "images/tp/复六方柱.jpg",
+          l: "model/13/index.html",
+        },
+        {
+          t: "六方单锥（6）",
+          s: "六方晶系、三方晶系",
+          u: "images/tp/六方单锥.jpg",
+          l: "model/18/index.html",
+        },
+        {
+          t: "复六方单锥（12）",
+          s: "六方晶系",
+          u: "images/tp/复六方单锥.jpg",
+          l: "model/19/index.html",
+        },
+        {
+          t: "六方双锥（12）",
+          s: "六方晶系、三方晶系",
+          u: "images/tp/六方双锥.jpg",
+          l: "model/24/index.html",
+        },
+        {
+          t: "复三方双锥（12）",
+          s: "六方晶系",
+          u: "images/tp/复三方双锥.jpg",
+          l: "model/21/index.html",
+        },
+        {
+          t: "复六方双锥（24）",
+          s: "六方晶系",
+          u: "images/tp/复六方双锥.jpg",
+          l: "model/25/index.html",
+        },
+
+        // 斜方晶系
+        {
+          t: "斜方柱（4）",
+          s: "斜方晶系",
+          u: "images/tp/斜方柱.jpg",
+          l: "model/04/index.html",
+        },
+        {
+          t: "斜方单锥（4）",
+          s: "斜方晶系",
+          u: "images/tp/斜方单锥.jpg",
+          l: "model/06/index.html",
+        },
+        {
+          t: "斜方双锥（8）",
+          s: "斜方晶系",
+          u: "images/tp/斜方双锥.jpg",
+          l: "model/07/index.html",
+        },
+        {
+          t: "斜方四面体（4）",
+          s: "斜方晶系",
+          u: "images/tp/斜方四面体.jpg",
+          l: "model/05/index.html",
+        },
+
+        // 特殊面
+        {
+          t: "单面",
+          s: "三斜、单斜、斜方、四方、三方、六方晶系",
+          u: "images/tp/单面.jpg",
+          l: "model/01/index.html",
+        },
+        {
+          t: "平行双面",
+          s: "三斜、单斜、斜方、四方、三方、六方晶系",
+          u: "images/tp/平行双面.jpg",
+          l: "model/02/index.html",
+        },
+        {
+          t: "双面",
+          s: "单斜晶系",
+          u: "images/tp/双面.jpg",
+          l: "model/03/index.html",
+        },
+
+        // 测试/互动类
+        {
+          t: "测试晶体",
+          s: "",
+          u: "images/tp/wenhao.jpg",
+          l: "model/!/index.html",
+        },
+        {
+          t: "互动音乐",
+          s: "",
+          u: "test/music/icon.png",
+          l: "test/music/index.html",
+        },
+        {
+          t: "Oskar Fischinger",
+          s: "",
+          u: "test/Oskar Fischinger/logos/2017/fischinger/share.png",
+          l: "test/Oskar Fischinger/index.html",
+        },
+        {
+          t: "互动流体",
+          s: "",
+          u: "test/Fluid/Fluid.jpg",
+          l: "test/Fluid/index.html",
+        },
+        {
+          t: "金属周期表",
+          s: "",
+          u: "pic/金属.jpg",
+          l: "test/金属周期表/index.html",
+        },
+        {
+          t: "喷火龙",
+          s: "",
+          u: "test/Sneeze dragon/preview.jpg",
+          l: "test/Sneeze dragon/index.html",
+        },
+        {
+          t: "互动小人",
+          s: "",
+          u: "test/互动小人/preview.jpg",
+          l: "test/互动小人/index.html",
+        },
+        {
+          t: "叠方块",
+          s: "",
+          u: "test/叠方块/preview.png",
+          l: "test/叠方块/index.html",
+        },
+        {
+          t: "拍蚊子",
+          s: "",
+          u: "test/拍蚊子/preview.png",
+          l: "test/拍蚊子/index.html",
+        },
+        {
+          t: "魔方",
+          s: "",
+          u: "test/魔方/preview.png",
+          l: "test/魔方/index.html",
+        },
+        {
+          t: "射箭",
+          s: "",
+          u: "test/射箭/preview.png",
+          l: "test/射箭/index.html",
+        },
+        {
+          t: "切方块",
+          s: "",
+          u: "test/cutcube/preview.png",
+          l: "test/cutcube/index.html",
+        },
+        {
+          t: "2048",
+          s: "123",
+          u: "test/2048/2048.png",
+          l: "test/2048/index.html",
+        },
+        {
+          t: "常用链接",
+          s: "",
+          u: "./images/link2.png",
+          l: "./Page/link.html",
+        },
+        {
+          t: "测试",
+          s: "",
+          u: "images/tp/wenhao.jpg",
+          l: "./test/offline/index.html",
+        },
+        {
+          t: "测试",
+          s: "",
+          u: "images/tp/wenhao.jpg",
+          l: "./test/offline-plugin-master/index.html",
+        },
+        {
+          t: "链接网站",
+          s: "",
+          u: "images/link2.png",
+          l: "./test/link/index.html",
+        },
+        {
+          t: "PIC",
+          s: "",
+          u: "images/tp/wenhao.jpg",
+          l: "./test/picture-show/index.html",
+        },
+      ];
+
+      // 渲染网格 - 新增多层级校验逻辑 + 优化链接/无图样式
+      data.forEach((item) => {
+        // 核心校验1：无图片+无链接 → 不生成任何内容
+        const hasImage = item.u && item.u.trim() !== "";
+        const hasLink = item.l && item.l.trim() !== "";
+        if (!hasImage && !hasLink) {
+          return; // 直接跳过当前项
+        }
+
+        // 定义SVG背景图base64（统一使用）
+        const svgPlaceholder =
+          "data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWNpcmNsZS1xdWVzdGlvbi1tYXJrLWljb24gbHVjaWRlLWNpcmNsZS1xdWVzdGlvbi1tYXJrIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMCIvPjxwYXRoIGQ9Ik05LjA5IDlhMyAzIDAgMCAxIDUuODMgMWMwIDItMyAzLTMgMyIvPjxwYXRoIGQ9Ik0xMiAxN2guMDEiLz48L3N2Zz4=";
+
+        // 创建卡片容器
+        const card = document.createElement("div");
+        card.className = "card";
+
+        // 构建图片部分 - 链接仅绑定到图片区域 + 统一SVG背景/无图显示SVG
+        let imgHTML = `<div class="img-container">`;
+        if (hasImage) {
+          // 有图片时：用a标签包裹img（仅图片可点击），添加懒加载+SVG背景
+          const imgStyle = `width:100%;height:100%;background-image:url('${svgPlaceholder}');background-repeat:no-repeat;background-position:center;background-size:contain;`;
+          if (hasLink) {
+            imgHTML += `<a href="${item.l}" target="_blank" style="display:block;width:100%;height:100%;">`;
+            imgHTML += `<img src="${item.u}" alt="${item.t || "无标题"}" style="${imgStyle}" loading="lazy">`;
+            imgHTML += `</a>`;
+          } else {
+            // 有图片但无链接：直接显示img，添加懒加载+SVG背景
+            imgHTML += `<img src="${item.u}" alt="${item.t || "无标题"}" style="${imgStyle}" loading="lazy">`;
+          }
+        } else {
+          // 无图片时：直接显示SVG作为图片内容
+          imgHTML += `<img src="${svgPlaceholder}" alt="无图片" style="width:100%;height:100%;" loading="lazy">`;
+        }
+        imgHTML += `</div>`;
+
+        // 构建文本层 - 保留标题/s校验逻辑
+        let captionHTML = "";
+        const hasTitle = item.t && item.t.trim() !== "";
+        const hasS = item.s && item.s.trim() !== "";
+
+        if (hasTitle || hasS) {
+          captionHTML = `<div class="caption">`;
+          if (hasTitle) {
+            captionHTML += `<h3>${item.t}</h3>`;
+          }
+          if (hasS) {
+            captionHTML += `<span>${item.s}</span>`;
+          }
+          captionHTML += `</div>`;
+        }
+
+        // 拼接卡片内容
+        card.innerHTML = imgHTML + captionHTML;
+
+        // 添加到网格中
+        document.getElementById("grid").appendChild(card);
+      });
+    </script>
+  </body>
+</html>
